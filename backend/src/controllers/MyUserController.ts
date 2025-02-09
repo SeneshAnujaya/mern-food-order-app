@@ -1,6 +1,22 @@
 import { Request, Response } from "express";
 import User from "../models/user";
-import { count } from "console";
+
+
+export const getCurrentUser = async (req: Request, res: Response) : Promise<any> => {
+  try {
+    const currentUser = await User.findOne({_id: req.userId})
+
+    if(!currentUser) {
+      return res.status(404).json({message: "user not found"});
+    }
+
+    res.json(currentUser);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({message: "Something went wrong"})
+    
+  }
+}
 
 export const createCurrentUser = async (
   req: Request,
