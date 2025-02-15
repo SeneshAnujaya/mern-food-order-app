@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useFormContext } from "react-hook-form";
 
@@ -16,11 +22,17 @@ const MenuItemInput = ({ index, removeMenuItem }: Props) => {
       <FormField
         control={control}
         name={`menuItems.${index}.name`}
-        render={(field) => (
+        render={({field}) => (
           <FormItem>
-            <FormLabel className="flex items-center gap-1">Name <FormMessage /></FormLabel>
+            <FormLabel className="flex items-center gap-1">
+              Name <FormMessage />
+            </FormLabel>
             <FormControl>
-                <Input {...field} placeholder="Cheese Pizza" className="bg-white"/>
+              <Input
+                {...field}
+                placeholder="Cheese Pizza"
+                className="bg-white"
+              />
             </FormControl>
           </FormItem>
         )}
@@ -28,16 +40,24 @@ const MenuItemInput = ({ index, removeMenuItem }: Props) => {
       <FormField
         control={control}
         name={`menuItems.${index}.price`}
-        render={(field) => (
+        render={({field}) => (
           <FormItem>
-            <FormLabel className="flex items-center gap-1">Price ($) <FormMessage /></FormLabel>
+            <FormLabel className="flex items-center gap-1">
+              Price ($) <FormMessage />
+            </FormLabel>
             <FormControl>
-                <Input {...field} placeholder="5.00" className="bg-white"/>
+              <Input {...field} placeholder="5.00" className="bg-white" />
             </FormControl>
           </FormItem>
         )}
       />
-      <Button type="button" onClick={removeMenuItem} className="bg-red-500 max-h-fit">Remove</Button>
+      <Button
+        type="button"
+        onClick={removeMenuItem}
+        className="bg-red-500 max-h-fit"
+      >
+        Remove
+      </Button>
     </div>
   );
 };
