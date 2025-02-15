@@ -28,7 +28,7 @@ const DetailsSection = () => {
       <FormField
         control={control}
         name="city"
-        render={({ field }) => <FormItem>
+        render={({ field }) => <FormItem className="flex-1">
             <FormLabel>City</FormLabel>
             <FormControl>
                 <Input {...field} className="bg-white" />
@@ -39,7 +39,7 @@ const DetailsSection = () => {
        <FormField
         control={control}
         name="country"
-        render={({ field }) => <FormItem>
+        render={({ field }) => <FormItem className="flex-1">
             <FormLabel>Country</FormLabel>
             <FormControl>
                 <Input {...field} className="bg-white" />
@@ -62,7 +62,7 @@ const DetailsSection = () => {
        <FormField
         control={control}
         name="estimatedDeliveryTime"
-        render={({ field }) => <FormItem>
+        render={({ field }) => <FormItem className="max-w-[25%]">
             <FormLabel>Estimate Delivery Time (minutes)</FormLabel>
             <FormControl>
                 <Input {...field} className="bg-white" placeholder="30"/>
