@@ -1,7 +1,10 @@
 import { Request, Response } from "express";
 import Restaurant from "../models/restaurants";
 
-export const searchRestaurants = async (req: Request, res: Response) : Promise<any> => {
+export const searchRestaurants = async (
+  req: Request,
+  res: Response
+): Promise<any> => {
   try {
     const city = req.params.city;
 
@@ -15,7 +18,9 @@ export const searchRestaurants = async (req: Request, res: Response) : Promise<a
     query["city"] = new RegExp(city, "i");
     const cityCheck = await Restaurant.countDocuments(query);
     if (cityCheck === 0) {
-      return res.status(404).json({data: [], pagination: {total: 0, page: 1, pages: 1}});
+      return res
+        .status(404)
+        .json({ data: [], pagination: { total: 0, page: 1, pages: 1 } });
     }
 
     if (selectedCuisines) {
@@ -28,7 +33,8 @@ export const searchRestaurants = async (req: Request, res: Response) : Promise<a
     if (searchQuery) {
       const searchRegex = new RegExp(searchQuery, "i");
       query["$or"] = [
-        { restaurantName: searchRegex, cuisines: { $in: [searchRegex] } },
+        { restaurantName: searchRegex },
+        { cuisines: { $in: [searchRegex] } },
       ];
     }
 
