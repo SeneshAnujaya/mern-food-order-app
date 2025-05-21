@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
@@ -20,6 +21,7 @@ const SortOptionDropdown = ({ onChange, sortOption }: Props) => {
         <DropdownMenuTrigger>
             <Button variant="outline" className="w-full">
                 Sort by: {selectedSortLabel}
+                <ChevronDown />
             </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
