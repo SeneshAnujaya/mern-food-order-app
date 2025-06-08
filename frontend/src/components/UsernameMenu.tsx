@@ -10,20 +10,20 @@ const UsernameMenu = () => {
     const {user, logout} = useAuth0();
   return (
     <DropdownMenu>
-        <DropdownMenuTrigger className='flex items-center px-3 font-bold hover:text-orange-500 gap-2'>
-    <CircleUserRound className='text-orange-500'/>
+        <DropdownMenuTrigger className='flex items-center px-3 font-semibold text-[0.95rem] text-gray-800 hover:text-mainOrange gap-2 focus:outline-none'>
+    <CircleUserRound className='text-mainOrange'/>
     {user?.email}
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent className='p-2.5'>
         <DropdownMenuItem>
-            <Link to="/manage-restaurant" className='font-bold hover:text-orange-500'>Manage Restaurant</Link>
+            <Link to="/manage-restaurant" className='font-semibold text-sm text-gray-800 hover:text-mainOrange hover:bg-transparent hover:shadow-none'>Manage Restaurant</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-            <Link to="/user-profile" className='font-bold hover:text-orange-500'>User Profile</Link>
+            <Link to="/user-profile" className='font-semibold text-sm text-gray-800 hover:text-mainOrange'>User Profile</Link>
             </DropdownMenuItem>
             <Separator/>
             <DropdownMenuItem>
-                <Button onClick={() => logout()} className='flex flex-1 font-bold bg-orange-500'>Log Out</Button>
+                <Button onClick={() => logout()} className='mt-2 flex flex-1 text-sm font-bold bg-mainOrange'>Log Out</Button>
             </DropdownMenuItem>
             
         </DropdownMenuContent>

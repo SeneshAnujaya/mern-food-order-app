@@ -49,8 +49,13 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
-  		}
+  			},
+			 mainOrange: "#FF3F33",
+  		},
+		 fontFamily: {
+        quickSand: ["Quicksand", 'sans-serif'],
+		outfit: ["Outfit", 'sans-serif']
+      },
   	}
   },
   plugins: [require("tailwindcss-animate")],
