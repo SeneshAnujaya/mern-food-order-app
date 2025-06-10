@@ -4,6 +4,7 @@ import HowItWorks from "@/components/HowItWorks";
 import bannerBg from "../assets/banner-bg.png";
 import burgerPic from "../assets/burger-pic.png";
 import { Button } from "@/components/ui/button";
+import PopularCuisines from "@/components/PopularCuisines";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -25,11 +26,19 @@ const HomePage = () => {
       </div>
 
       {/* Top cuisines */}
-      <div className="md:px-32 bg-[#fff1ee] rounded-2xl py-8 flex flex-col gap-5 text-center pb-12">
-        <h1 className="text-[2.4rem] font-bold font-outfit tracking-tight text-gray-800">
+      <div className="px-4 md:px-8 bg-[#fff1ee] rounded-2xl py-8 flex flex-col gap-5 text-center">
+        <h1 className="text-[2rem] sm:text-[2.4rem] font-bold font-outfit tracking-tight text-gray-800">
          Popular Cuisines
         </h1>
-       
+       <PopularCuisines />
+      </div>
+
+       {/* Top Restaurants */}
+      <div className="px-4 md:px-8 bg-[#fff1ee] rounded-2xl py-8 flex flex-col gap-5 text-center">
+        <h1 className="text-[2rem] sm:text-[2.4rem] font-bold font-outfit tracking-tight text-gray-800">
+         Trending Restaurants
+        </h1>
+    
       </div>
 
       <HowItWorks />

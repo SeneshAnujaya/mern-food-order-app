@@ -1,5 +1,5 @@
 import { SearchState } from "@/pages/SearchPage";
-import { Restaurant, RestaurantSearchResponse } from "@/types";
+import { PopularCuisines, Restaurant, RestaurantSearchResponse } from "@/types";
 import { useQuery } from "react-query";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -54,3 +54,19 @@ export const useSearchRestaurants = (
 
   return { results, isLoading };
 };
+
+export const useGetPopularCuisines = () => {
+  const getPopularCuisinesRequest = async (): Promise<PopularCuisines[]> => {
+    const response = await fetch(`${API_BASE_URL}/api/restaurant/popularCuisines`);
+    if(!response.ok) {
+      throw new Error("Failed to get popular cuisines")
+    }
+
+    return response.json();
+  }
+
+  const {data: popularCuisines, isLoading} = useQuery("fetchPopularCuisines", getPopularCuisinesRequest);
+
+  return {popularCuisines, isLoading};
+
+}

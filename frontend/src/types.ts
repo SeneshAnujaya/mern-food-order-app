@@ -63,3 +63,8 @@ export type RestaurantSearchResponse = {
     pages: number;
   };
 };
+
+export type PopularCuisines = {
+  _id: string,
+  count: number
+}
