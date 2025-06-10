@@ -1,5 +1,5 @@
 import { cuisineList } from "@/config/restaurant-options-config";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { BadgeCheck, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { ChangeEvent } from "react";
 import { Button } from "./ui/button";
 
@@ -27,11 +27,11 @@ const CuisineFilter = ({
   const handleCuisinesReset = () => onChange([]);
   return (
     <>
-      <div className="flex justify-between items-center px-2">
-        <div className="text-md font-semibold mb-2">Filter By Cuisine</div>
+      <div className="flex justify-between items-center px-2 mb-3">
+        <div className="text-sm sm:text-base font-semibold mb-2">Filter By Cuisine</div>
         <div
           onClick={handleCuisinesReset}
-          className="text-sm font-semibold mb-2 underline cursor-pointer text-blue-500"
+          className="text-sm font-semibold mb-2 underline cursor-pointer text-mainOrange"
         >
           Reset Filters
         </div>
@@ -50,8 +50,8 @@ const CuisineFilter = ({
                 checked={isSelected}
                 onChange={handleCuisinesChange}
               />
-              <label htmlFor={`cuisine_${cuisine}`} className={`flex flex-1 items-center cursor-pointer text-sm rounded-full px-4 py-2 font-semibold ${isSelected ? "border border-green-600 text-green-600":"border border-slate-300"}`}>
-                {isSelected && <Check  size={20} strokeWidth={3}/>}
+              <label htmlFor={`cuisine_${cuisine}`} className={`flex flex-1 items-center cursor-pointer text-sm rounded-full px-4 py-2 text-gray-800 font-medium ${isSelected ? "border border-mainOrange text-mainOrange gap-1":"border border-slate-400"}`}>
+                {isSelected && /*<Check  size={20} strokeWidth={3}/>*/ <BadgeCheck size={20} strokeWidth={2}/>}
                 {cuisine}
               </label>
             </div>

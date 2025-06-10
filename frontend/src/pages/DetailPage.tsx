@@ -109,7 +109,7 @@ const DetailPage = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 mt-[4rem]">
       <AspectRatio ratio={16 / 5}>
         <img
           src={restaurant.imageUrl}
@@ -119,7 +119,7 @@ const DetailPage = () => {
       <div className="grid md:grid-cols-[4fr_2fr] gap-5 md:px-32">
         <div className="flex flex-col gap-4">
           <RestaurantInfo restaurant={restaurant} />
-          <span className="text-2xl font-bold tracking-tight">Menu</span>
+          <span className="text-xl text-gray-800 font-outfit font-medium tracking-tight mt-4">Menu</span>
           {restaurant.menuItems.map((menuItem) => (
             <MenuItem
               menuItem={menuItem}
@@ -128,7 +128,7 @@ const DetailPage = () => {
           ))}
         </div>
         <div>
-          <Card>
+          <Card className="border-none bg-[#fff1ee] shadow-none p-2">
             <OrderSummary
               restaurant={restaurant}
               cartItems={cartItems}

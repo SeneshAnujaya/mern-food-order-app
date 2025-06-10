@@ -20,10 +20,10 @@ const PaginationSelector = ({ page, pages, onPageChange }: Props) => {
     pageNumbers.push(i);
   }
   return (
-    <Pagination>
+    <Pagination className="">
       <PaginationContent>
         {page !== 1 && (
-          <PaginationItem>
+          <PaginationItem className="text-mainOrange font-semibold">
             <PaginationPrevious
               href="#"
               onClick={() => onPageChange(page - 1)}
@@ -32,18 +32,19 @@ const PaginationSelector = ({ page, pages, onPageChange }: Props) => {
         )}
 
         {pageNumbers.map((number) => (
-          <PaginationItem>
+          <PaginationItem className="bg-[#fff1ee] text-mainOrange rounded-md">
             <PaginationLink
               href="#"
               onClick={() => onPageChange(number)}
               isActive={page === number}
+              className={`${page === number ? 'bg-mainOrange text-white': 'bg-[#fff1ee]'}`}
             >
               {number}
             </PaginationLink>
           </PaginationItem>
         ))}
         {page !== pageNumbers.length && (
-          <PaginationItem>
+          <PaginationItem className="text-mainOrange font-semibold">
             <PaginationNext href="#" onClick={() => onPageChange(page + 1)} />
           </PaginationItem>
         )}

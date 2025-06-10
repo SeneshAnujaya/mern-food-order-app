@@ -10,7 +10,7 @@ const CuisinesSection = () => {
     <div className="space-y-2">
         <div>
             <h2 className="text-2xl font-bold">Cuisines</h2>
-            <FormDescription>
+            <FormDescription className="text-gray-800">
                 Select the cuisines that your restaurant serves 
             </FormDescription>
         </div>

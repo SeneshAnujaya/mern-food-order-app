@@ -48,10 +48,10 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile",
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSave)}
-        className="space-y-4 bg-gray-50 rounded-lg p-5 md:p-10"
+        className="space-y-4 bg-[#fff1ee] rounded-lg p-5 md:p-10"
       >
         <div>
-          <h2 className="text-2xl font-bold">{title}</h2>
+          <h2 className="text-2xl font-semibold font-outfit text-gray-800">{title}</h2>
           <FormDescription>
             View and change your profile information here
           </FormDescription>
@@ -63,7 +63,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile",
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input {...field} disabled className="bg-white" />
+                <Input {...field} disabled className="bg-white border-none" />
               </FormControl>
             </FormItem>
           )}
@@ -76,7 +76,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile",
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field}  className="bg-white" />
+                <Input {...field}  className="bg-white border-none" />
               </FormControl>
               <FormMessage/>
             </FormItem>
@@ -91,7 +91,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile",
               <FormItem className="flex-1">
                 <FormLabel>Address Line 1</FormLabel>
                 <FormControl>
-                  <Input {...field}  className="bg-white" />
+                  <Input {...field}  className="bg-white border-none" />
                 </FormControl>
                 <FormMessage/>
               </FormItem>
@@ -104,7 +104,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile",
               <FormItem className="flex-1">
                 <FormLabel>City</FormLabel>
                 <FormControl>
-                  <Input {...field}  className="bg-white" />
+                  <Input {...field}  className="bg-white border-none" />
                 </FormControl>
                 <FormMessage/>
               </FormItem>
@@ -117,7 +117,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile",
               <FormItem className="flex-1">
                 <FormLabel>Country</FormLabel>
                 <FormControl>
-                  <Input {...field}  className="bg-white" />
+                  <Input {...field}  className="bg-white border-none" />
                 </FormControl>
                 <FormMessage/>
               </FormItem>
@@ -127,7 +127,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile",
         {isLoading ? (
           <LoadingButton />
         ) : (
-          <Button type="submit" className="bg-orange-500">{buttonText}</Button>
+          <Button type="submit" className="bg-mainOrange">{buttonText}</Button>
         )}
       </form>
     </Form>

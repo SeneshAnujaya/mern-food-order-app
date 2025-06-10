@@ -7,9 +7,9 @@ type Props = {
 
 const SearchResultInfo = ({total, city}: Props) => {
   return (<div className="text-xl font-bold flex flex-col gap-3 justify-between lg:items-center lg:flex-row">
-    <span>
-        {total} Restaurants found in {city}
-        <Link to="/" className="ml-1 text-sm font-semibold underline cursor-pointer text-blue-500">Change Location</Link>
+    <span className="text-[1.1rem]">
+        <span className="text-mainOrange font-bold text-[1.15rem]">{total}</span> Restaurants found in <span className="text-mainOrange font-bold text-[1.15rem]">{city}</span>
+        <Link to="/" className="ml-2 text-sm font-semibold underline cursor-pointer text-gray-600">Change Location</Link>
     </span>
   
   </div>);

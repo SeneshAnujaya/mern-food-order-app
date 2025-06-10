@@ -76,8 +76,8 @@ const SearchPage = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5 mt-[4.5rem]">
-      <div id="cuisines-list">
+    <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5 mt-[5rem]">
+      <div id="cuisines-list" className=" bg-[#fff1ee] py-6 px-2 rounded-lg">
         <CuisineFilter
           selectedCuisines={searchState.selectedCuisines}
           onChange={setSelectedCuisines}
@@ -86,22 +86,26 @@ const SearchPage = () => {
         />
       </div>
       <div id="main-content" className="flex flex-col gap-5">
+        <div className="bg-[#fff1ee] p-5 rounded-lg">
         <SearchBar
           searchQuery={searchState.searchQuery}
           onSubmit={setSearchQuery}
           placeholder="Search by Cuisine or Restaurant Name"
           onReset={resetSearch}
         />
-        <div className="flex justify-between flex-col gap-3 lg:flex-row">
+        </div>
+        <div className="flex justify-between flex-col gap-3 lg:flex-row  bg-[#fff1ee] py-4 px-5 rounded-lg">
           <SearchResultInfo total={results.pagination.total} city={city} />
           <SortOptionDropdown
             sortOption={searchState.sortOption}
             onChange={(value) => setSortOption(value)}
           />
         </div>
+        <div className="mt-6">
         {results.data.map((restaurant, index) => (
           <SearchResultCard key={index} restaurant={restaurant} />
         ))}
+        </div>
         <PaginationSelector
           page={results.pagination.page}
           pages={results.pagination.pages}

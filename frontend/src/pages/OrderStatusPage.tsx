@@ -15,9 +15,10 @@ const OrderStatusPage = () => {
         return <div>No orders found</div>;
     }
   return (
-    <div className="space-y-10">
+    <div className="space-y-8 mt-[4rem]">
+        <h2 className="font-outfit text-2xl font-medium text-gray-800">My Orders</h2>
         {orders.map((order) => (
-            <div className="space-y-10 bg-gray-50 p-10 rounded-lg">
+            <div className="space-y-6 bg-[#fff1ee] p-10 rounded-lg">
                 <OrderStatusHeader order={order}/>
                 <div className="grid gap-10 md:grid-cols-2">
                     <OrderStatusDetail order={order}/>
