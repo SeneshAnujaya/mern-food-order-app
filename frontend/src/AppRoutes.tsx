@@ -22,7 +22,7 @@ const AppRoutes = () => {
       />
       <Route path="/auth-callback" element={<AuthCallbackPage />} />
       <Route
-        path="/search/:city"
+        path="/search/:city?"
         element={
           <Layout showHero={false}>
             <SearchPage />

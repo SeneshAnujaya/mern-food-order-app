@@ -27,6 +27,16 @@ export type Restaurant = {
   lastUpdated: string;
 };
 
+export type TopRestaurantSearchResponse = {
+  _id: string;
+  orderCount: number;
+  restaurantName: string;
+  imageUrl: string;
+  city: string;
+  country: string;
+  cuisines: string[];
+};
+
 export type OrderStatus =
   | "placed"
   | "paid"
@@ -65,6 +75,6 @@ export type RestaurantSearchResponse = {
 };
 
 export type PopularCuisines = {
-  _id: string,
-  count: number
-}
+  _id: string;
+  count: number;
+};

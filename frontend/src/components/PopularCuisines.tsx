@@ -1,10 +1,12 @@
 import { useGetPopularCuisines } from "@/api/RestaurantApi";
 import type { PopularCuisines } from "@/types";
 
-import burgerPic from "../assets/burger.jpg";
 import { Soup } from "lucide-react";
-import { Key } from "react";
-import { allCuisinesImage, cuisineImageMap } from "@/config/cuisines-images-config";
+
+import {
+  allCuisinesImage,
+  cuisineImageMap,
+} from "@/config/cuisines-images-config";
 
 const PopularCuisines = () => {
   const { popularCuisines, isLoading } = useGetPopularCuisines();
@@ -31,7 +33,7 @@ const PopularCuisines = () => {
               <span className="flex gap-1 items-center">
                 <Soup className="w-4 text-mainOrange" />
                 <p className="text-[0.9rem] font-medium mt-0.5">
-                  12 Restaurants
+                  {cuisine.count} Restaurants
                 </p>
               </span>
             </div>

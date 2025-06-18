@@ -28,6 +28,9 @@ const SearchPage = () => {
 
   const { results, isLoading } = useSearchRestaurants(searchState, city);
 
+
+  
+
   const setSortOption = (sortOption: string) => {
     setSearchState((prevState) => ({
       ...prevState,
@@ -71,7 +74,7 @@ const SearchPage = () => {
     <span>Loading...</span>;
   }
 
-  if (!results?.data || !city) {
+  if (!results?.data) {
     return <span>No results found</span>;
   }
 
@@ -95,7 +98,7 @@ const SearchPage = () => {
         />
         </div>
         <div className="flex justify-between flex-col gap-3 lg:flex-row  bg-[#fff1ee] py-4 px-5 rounded-lg">
-          <SearchResultInfo total={results.pagination.total} city={city} />
+          <SearchResultInfo total={results.pagination.total} city={city || "All"} />
           <SortOptionDropdown
             sortOption={searchState.sortOption}
             onChange={(value) => setSortOption(value)}

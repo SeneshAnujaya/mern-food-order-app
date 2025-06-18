@@ -23,7 +23,7 @@ const Hero = () => {
           variant="ghost"
           className="mt-10 font-semibold bg-mainOrange py-6 px-8 text-base  text-white hover:text-white hover:bg-slate-700  rounded-full transition-all"
         >
-          <Link to="/search/london">Find Restaurants</Link>
+          <Link to="/search">Find Restaurants</Link>
         </Button>
       </div>
     </div>

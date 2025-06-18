@@ -5,6 +5,7 @@ import bannerBg from "../assets/banner-bg.png";
 import burgerPic from "../assets/burger-pic.png";
 import { Button } from "@/components/ui/button";
 import PopularCuisines from "@/components/PopularCuisines";
+import TopRestaurants from "@/components/TopRestaurants";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const HomePage = () => {
         <h1 className="text-[2rem] sm:text-[2.4rem] font-bold font-outfit tracking-tight text-gray-800">
          Trending Restaurants
         </h1>
-    
+        <TopRestaurants />
       </div>
 
       <HowItWorks />
