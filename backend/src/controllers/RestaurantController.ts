@@ -110,7 +110,32 @@ export const getTopRestaurants = async (
       { $group: { _id: "$restaurant", orderCount: { $sum: 1 } } },
       { $sort: { orderCount: -1 } },
       {$limit: limit},
+      {$lookup: {
+        from: "restaurants",
+        localField: "_id",
+        foreignField: "_id",
+        as: "restaurant"
+      }},
+      {
+        $unwind: "$restaurant",
+      },
+      {
+        $project: {
+          _id: "$restaurant._id",
+          restaurantName: "$restaurant.restaurantName",
+          imageUrl: "$restaurant.imageUrl",
+          city: "$restaurant.city",
+          country:"$restaurant.country",
+          cuisines: "$restaurant.cuisines",
+          orderCount:1
+        }
+      }
       
     ]);
-  } catch (error) {}
+
+    res.status(200).json(topRestaurants);
+  } catch (error) {
+      console.log(error);
+    res.status(500).json({ message: "Failed to fetch top restaurants" });
+  }
 };
