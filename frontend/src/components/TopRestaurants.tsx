@@ -18,7 +18,7 @@ const TopRestaurants = () => {
       {topRestaurants
         ?.slice(0,8)
         .map((restaurant: TopRestaurantSearchResponse, index: number) => (
-          <Link to={`/detail/${restaurant._id}`}>
+          <Link to={`/detail/${restaurant._id}`} key={index} className="w-full">
           <div key={index} className="w-full group">
             <div className="overflow-hidden rounded-2xl">
             <img

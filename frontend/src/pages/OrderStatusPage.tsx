@@ -12,7 +12,7 @@ const OrderStatusPage = () => {
     }
 
     if(!orders || orders.length === 0) {
-        return <div>No orders found</div>;
+        return <div className="mt-[5rem] text-xl">No orders found</div>;
     }
   return (
     <div className="space-y-8 mt-[4rem]">

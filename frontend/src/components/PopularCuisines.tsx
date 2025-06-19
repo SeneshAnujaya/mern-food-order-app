@@ -7,6 +7,7 @@ import {
   allCuisinesImage,
   cuisineImageMap,
 } from "@/config/cuisines-images-config";
+import { Link } from "react-router-dom";
 
 const PopularCuisines = () => {
   const { popularCuisines, isLoading } = useGetPopularCuisines();
@@ -20,6 +21,7 @@ const PopularCuisines = () => {
       {popularCuisines
         ?.slice(0, 4)
         .map((cuisine: PopularCuisines, index: number) => (
+          <Link to={`/search?cuisine=${cuisine._id}`} className="w-full" key={index}>
           <div key={index} className="w-full">
             <img
               src={cuisineImageMap[cuisine._id] || allCuisinesImage}
@@ -38,6 +40,7 @@ const PopularCuisines = () => {
               </span>
             </div>
           </div>
+          </Link>
         ))}
     </div>
   );

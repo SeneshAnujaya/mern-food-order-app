@@ -26,7 +26,11 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="mt-6 text-sm sm:text-[0.9rem] font-medium text-gray-700 leading-[1.8]">
-              <li>Home</li>
+              <li>
+                 <Link to="/" className="hover:text-mainOrange transition-colors duration-300">
+                Home
+                </Link>
+                </li>
               <li>About Us</li>
               <li>Contact Us</li>
             </ul>
@@ -37,9 +41,15 @@ const Footer = () => {
               My Account
             </h3>
             <ul className="mt-6 text-sm sm:text-[0.9rem] font-medium text-gray-700 leading-[1.8]">
-              <li>My Profile</li>
-              <li>My Orders</li>
-              <li>My Restaurants</li>
+              <li>
+                <Link to="/user-profile" className="hover:text-mainOrange transition-colors duration-300">My Profile</Link>
+              </li>
+              <li>
+                <Link to="/order-status" className="hover:text-mainOrange transition-colors duration-300">My Orders</Link>
+              </li>
+              <li>
+                <Link to="/manage-restaurant" className="hover:text-mainOrange transition-colors duration-300">My Restaurants</Link>
+              </li>
             </ul>
           </div>
 
@@ -78,11 +88,12 @@ const Footer = () => {
               <img src={appDownImage} className="w-48" />
             </div>
           </div>
-          
         </div>
       </div>
       <div className="flex items-center justify-center bg-gray-950 py-4">
-        <p className="text-slate-200 text-sm font-outfit font-light">© Copyright 2025 QuickBite . All Rights Reserved.</p>
+        <p className="text-slate-200 text-sm font-outfit font-light">
+          © Copyright 2025 QuickBite . All Rights Reserved.
+        </p>
       </div>
     </>
   );

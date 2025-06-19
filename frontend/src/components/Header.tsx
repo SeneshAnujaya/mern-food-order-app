@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="border-b  pt-4 pb-5 fixed w-full bg-white z-50 px-4">
         <div className="container mx-auto flex justify-between items-center">
-            <Link to="/" className="text-3xl font-bold tracking-tight text-orange-500">
+            <Link to="/" className="text-3xl font-bold tracking-tight text-orange-500 focus:outline-none">
             <img src={NavLogo} alt="navlogo" className="w-32 md:w-40"/>
             </Link>
             <div className="md:hidden">

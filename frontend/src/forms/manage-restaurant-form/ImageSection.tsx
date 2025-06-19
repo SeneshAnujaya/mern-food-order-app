@@ -14,8 +14,6 @@ const ImageSection = () => {
 
   const existingImageUrl = watch("imageUrl");
 
-  console.log(existingImageUrl);
-
   return (
     <div className="space-y-2">
       <div>
@@ -26,9 +24,14 @@ const ImageSection = () => {
         </FormDescription>
       </div>
       <div className="flex flex-col gap-8 md:w-[50%]">
-        {existingImageUrl && <AspectRatio ratio={16/9}>
-            <img src={existingImageUrl} className="rounded-md object-cover h-full w-full mt-2" />
-            </AspectRatio>}
+        {existingImageUrl && (
+          <AspectRatio ratio={16 / 9}>
+            <img
+              src={existingImageUrl}
+              className="rounded-md object-cover h-full w-full mt-2"
+            />
+          </AspectRatio>
+        )}
         <FormField
           control={control}
           name="imageFile"

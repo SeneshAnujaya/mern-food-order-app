@@ -19,12 +19,14 @@ const Hero = () => {
           and fresh — anytime, anywhere.
         </p>
 
-        <Button
-          variant="ghost"
-          className="mt-10 font-semibold bg-mainOrange py-6 px-8 text-base  text-white hover:text-white hover:bg-slate-700  rounded-full transition-all"
-        >
-          <Link to="/search">Find Restaurants</Link>
-        </Button>
+        <Link to="/search">
+          <Button
+            variant="ghost"
+            className="mt-10 font-semibold bg-mainOrange py-6 px-8 text-base  text-white hover:text-white hover:bg-slate-700  rounded-full transition-all"
+          >
+            Find Restaurants
+          </Button>
+        </Link>
       </div>
     </div>
   );

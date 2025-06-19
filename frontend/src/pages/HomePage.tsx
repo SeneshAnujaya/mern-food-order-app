@@ -16,7 +16,10 @@ const HomePage = () => {
   };
   return (
     <div className="flex flex-col gap-12">
-      <div className="md:px-32 bg-[#fff1ee] rounded-2xl py-8 flex flex-col gap-5 text-center pb-12">
+      <div className="md:px-32 bg-[#fff1ee] rounded-2xl py-8 flex flex-col gap-5 text-center pb-12" style={{
+          backgroundImage: `url(${bannerBg})`,
+          backgroundSize: "contain",
+        }}>
         <h1 className="text-[2.5rem] font-bold font-outfit tracking-tight text-gray-800">
           Tasty Spots Near You
         </h1>
@@ -72,7 +75,7 @@ const HomePage = () => {
             variant="ghost"
             className="mt-6 font-semibold bg-mainOrange py-6 px-8 text-base  text-white hover:text-white hover:bg-slate-700 w-fit  rounded-full transition-all"
           >
-            <Link to="/search/london">Order Now</Link>
+            <Link to="/search">Order Now</Link>
           </Button>
         </div>
       </div>

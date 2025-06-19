@@ -6,7 +6,7 @@ import SearchResultCard from "@/components/SearchResultCard";
 import SearchResultInfo from "@/components/SearchResultInfo";
 import SortOptionDropdown from "@/components/SortOptionDropdown";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 export type SearchState = {
   searchQuery: string;
@@ -17,10 +17,15 @@ export type SearchState = {
 
 const SearchPage = () => {
   const { city } = useParams();
+
+  const [searchParams] = useSearchParams();;
+  const defaultCuisine = searchParams.get("cuisine");
+
+  
   const [searchState, setSearchState] = useState<SearchState>({
     searchQuery: "",
     page: 1,
-    selectedCuisines: [],
+    selectedCuisines: defaultCuisine ? [defaultCuisine] : [],
     sortOption: "bestMatch",
   });
 
