@@ -1,5 +1,5 @@
 import { cuisineList } from "@/config/restaurant-options-config";
-import { BadgeCheck, Check, ChevronDown, ChevronUp } from "lucide-react";
+import { BadgeCheck, ChevronDown, ChevronUp } from "lucide-react";
 import { ChangeEvent } from "react";
 import { Button } from "./ui/button";
 
