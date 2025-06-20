@@ -60,6 +60,7 @@ A modern full-stack web application for ordering food online, built with React, 
 ```bash
 git clone https://github.com/SeneshAnujaya/mern-food-order-app.git
 
+```
 
 ###  🚀 Live Demo
 
