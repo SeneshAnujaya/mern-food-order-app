@@ -52,13 +52,6 @@ A modern full-stack web application for ordering food online, built with React, 
 
 ---
 
-📂 Project Structure
-mern-food-order-app/
-├── client/             # Frontend (React + Tailwind + TypeScript)
-├── server/             # Backend (Express + TypeScript)
-├── screenshots/        # Screenshots for documentation
-└── README.md
-
 
 ## 🛠 Setup Instructions
 
