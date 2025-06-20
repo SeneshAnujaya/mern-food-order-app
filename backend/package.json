@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "./src/index.ts",
+  "main": "./index.ts",
   "scripts": {
     "dev": "concurrently \"nodemon\" \"npm run stripe\"",
     "stripe": "stripe listen --forward-to localhost:7000/api/order/checkout/webhook",
